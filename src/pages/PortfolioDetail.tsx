@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { projects } from "../data/portfolio";
 
 export default function PortfolioDetail() {
     const { slug } = useParams<{ slug: string }>();
     const project = projects.find((p) => p.id === slug);
+    const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
     if (!project) {
         return (
@@ -19,6 +21,17 @@ export default function PortfolioDetail() {
         );
     }
 
+    const openLightbox = (index: number) => setLightboxIndex(index);
+    const closeLightbox = () => setLightboxIndex(null);
+    const goPrev = () =>
+        setLightboxIndex((prev) =>
+            prev !== null ? (prev - 1 + project.gallery.length) % project.gallery.length : null
+        );
+    const goNext = () =>
+        setLightboxIndex((prev) =>
+            prev !== null ? (prev + 1) % project.gallery.length : null
+        );
+
     return (
         <div className="detail-page">
             <div className="detail-container">
@@ -31,14 +44,14 @@ export default function PortfolioDetail() {
 
                 {/* Title */}
                 <h1 className="detail-title">{project.title}</h1>
-                <p className="detail-role">{">"} {project.role}</p>
 
                 {/* Hero Image */}
                 <div className="detail-hero-image">
-                    <div className="detail-hero-image-inner">
-                        <div className="detail-hero-image-icon">🎮</div>
-                        <p className="detail-hero-image-label">{project.title} — Cover Image</p>
-                    </div>
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        className="detail-hero-image-img"
+                    />
                 </div>
 
                 {/* Content Grid */}
@@ -62,6 +75,20 @@ export default function PortfolioDetail() {
 
                     {/* Sidebar */}
                     <div className="detail-sidebar">
+                        <div className="detail-card">
+                            <h3 className="detail-sidebar-title">Role</h3>
+                            <p className="detail-sidebar-text">
+                                {project.role}
+                            </p>
+                        </div>
+
+                        <div className="detail-card">
+                            <h3 className="detail-sidebar-title">Timeline</h3>
+                            <p className="detail-sidebar-text">
+                                <span className="accent">📅</span> {project.date}
+                            </p>
+                        </div>
+
                         <div className="detail-card">
                             <h3 className="detail-sidebar-title">Tech Stack</h3>
                             <div className="detail-tags">
@@ -108,12 +135,17 @@ export default function PortfolioDetail() {
                         <span className="accent">//</span> Gallery
                     </h2>
                     <div className="gallery-grid">
-                        {project.gallery.map((_, i) => (
-                            <div key={i} className="gallery-item">
-                                <div className="gallery-item-inner">
-                                    <div className="gallery-item-icon">📸</div>
-                                    <p className="gallery-item-label">screenshot_{i + 1}.png</p>
-                                </div>
+                        {project.gallery.map((item, i) => (
+                            <div
+                                key={i}
+                                className="gallery-item gallery-item-clickable"
+                                onClick={() => openLightbox(i)}
+                            >
+                                <img
+                                    src={item.src}
+                                    alt={item.caption}
+                                    className="gallery-item-img"
+                                />
                             </div>
                         ))}
                     </div>
@@ -122,6 +154,40 @@ export default function PortfolioDetail() {
                 {/* Back */}
                 <Link to="/portfolio" className="brutal-btn">← All Projects</Link>
             </div>
+
+            {/* Lightbox Modal */}
+            {lightboxIndex !== null && (
+                <div className="lightbox-overlay" onClick={closeLightbox}>
+                    <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+                        <button className="lightbox-close" onClick={closeLightbox}>✕</button>
+
+                        <div className="lightbox-image-wrapper">
+                            {project.gallery.length > 1 && (
+                                <button className="lightbox-nav lightbox-nav-prev" onClick={goPrev}>
+                                    ‹
+                                </button>
+                            )}
+                            <img
+                                src={project.gallery[lightboxIndex].src}
+                                alt={project.gallery[lightboxIndex].caption}
+                                className="lightbox-image"
+                            />
+                            {project.gallery.length > 1 && (
+                                <button className="lightbox-nav lightbox-nav-next" onClick={goNext}>
+                                    ›
+                                </button>
+                            )}
+                        </div>
+
+                        <div className="lightbox-caption">
+                            <p>{project.gallery[lightboxIndex].caption}</p>
+                            <span className="lightbox-counter">
+                                {lightboxIndex + 1} / {project.gallery.length}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

@@ -5,6 +5,7 @@ import Portfolio from "../pages/Portfolio";
 import PortfolioDetail from "../pages/PortfolioDetail";
 import Education from "../pages/Education";
 import Experience from "../pages/Experience";
+import NotFound from "../pages/NotFound";
 
 export const router = createBrowserRouter([
     {
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
             { path: "portfolio/:slug", element: <PortfolioDetail /> },
             { path: "education", element: <Education /> },
             { path: "experience", element: <Experience /> },
+            { path: "*", element: <NotFound /> },
         ],
     },
 ]);

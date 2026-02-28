@@ -23,9 +23,9 @@ export default function Footer() {
                         <h4 className="footer-heading">Navigation</h4>
                         <div className="footer-links">
                             <Link to="/" className="footer-link">Home</Link>
-                            <Link to="/portfolio" className="footer-link">Portfolio</Link>
-                            <Link to="/education" className="footer-link">Education</Link>
+                            <Link to="/portfolio" className="footer-link">Projects</Link>
                             <Link to="/experience" className="footer-link">Experience</Link>
+                            <Link to="/education" className="footer-link">Education</Link>
                         </div>
                     </div>
 
@@ -33,14 +33,14 @@ export default function Footer() {
                     <div>
                         <h4 className="footer-heading">Connect</h4>
                         <div className="footer-links">
-                            <a href="https://github.com/joshuapunyanan" target="_blank" rel="noopener noreferrer" className="footer-link">
+                            <a href="https://github.com/joshuamanly" target="_blank" rel="noopener noreferrer" className="footer-link">
                                 GitHub ↗
                             </a>
-                            <a href="https://linkedin.com/in/joshuapunyanan" target="_blank" rel="noopener noreferrer" className="footer-link">
+                            <a href="https://linkedin.com/in/joshuamanly" target="_blank" rel="noopener noreferrer" className="footer-link">
                                 LinkedIn ↗
                             </a>
-                            <a href="mailto:joshua@punyanan.com" className="footer-link">
-                                joshua@punyanan.com
+                            <a href="mailto:joshuapunyanan@gmail.com" className="footer-link">
+                                joshuapunyanan@gmail.com
                             </a>
                         </div>
                     </div>
@@ -48,10 +48,7 @@ export default function Footer() {
 
                 <div className="footer-bottom">
                     <p className="footer-copyright">
-                        © {new Date().getFullYear()} Joshua Punyanan. All rights reserved.
-                    </p>
-                    <p className="footer-copyright">
-                        Built with React + TypeScript
+                        © {new Date().getFullYear()} Joshua Manly Punyanan. All rights reserved. All wrongs reversed.
                     </p>
                 </div>
             </div>

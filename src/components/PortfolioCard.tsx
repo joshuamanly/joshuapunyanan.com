@@ -9,10 +9,11 @@ export default function PortfolioCard({ project }: PortfolioCardProps) {
     return (
         <Link to={`/portfolio/${project.id}`} className="portfolio-card">
             <div className="portfolio-card-thumb">
-                <div className="portfolio-card-thumb-inner">
-                    <div className="portfolio-card-thumb-icon">🎮</div>
-                    <div className="portfolio-card-thumb-label">{project.tech[0]}</div>
-                </div>
+                <img
+                    src={project.image}
+                    alt={project.title}
+                    className="portfolio-card-thumb-img"
+                />
             </div>
 
             <div className="portfolio-card-body">
