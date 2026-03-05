@@ -58,7 +58,7 @@ export const projects: Project[] = [
             "Optimized game performance for low end TV devices by extensively monitoring memory usage in profiler. ",
         ],
         challenges: [
-            { problem: "Synchronizing physics-based racing across 8 players with minimal latency.", solution: "Implemented client-side prediction with server reconciliation using Photon's authoritative server model. Used interpolation and extrapolation to smooth out network jitter, achieving consistent 60fps gameplay even on unstable connections." },
+            { problem: "Extremely heavy spline calculations.", solution: "Refactored the system using Unity Job System and Burst Compiler to parallelize calculations, significantly improving performance and reducing memory usage by up to 40%." },
         ],
         tech: ["Unity", "C#", "Optimization"],
         image: "/images/Feature Graphic/FG Power Kart Racing.png",
@@ -80,11 +80,7 @@ export const projects: Project[] = [
             "Join the fisher cats on fun and cooperative fishing adventure in Meow Fishery! Team up with your friends and sail the open ocean to catch as many fish as you can!",
         role: "Game Programmer",
         jobDesc: [
-            "Developed cooperative fishing gameplay mechanics using Construct 3",
-            "Implemented multiplayer synchronization for cooperative play sessions",
-            "Created various fish AI behaviors and spawning systems",
-            "Built UI systems for player inventory and progression",
-            "Integrated game with AyoMain! gaming platform"
+            "Programmed cooperative fishing gameplay mechanics using Construct 3",
         ],
         challenges: [
         ],
@@ -109,15 +105,9 @@ export const projects: Project[] = [
             "Card Battle Arena is a strategic turn-based card game featuring 200+ unique cards, deck building mechanics, and competitive online matchmaking. The game implements a custom card scripting system that allows designers to create new card effects without code changes, and uses an ELO-based ranking system for fair matchmaking.",
         role: "Full Stack Developer",
         jobDesc: [
-            "Revamped the AyoMain! platform UI based on design mockups",
-            "Developed RESTful APIs using Node.js for game management and analytics",
-            "Implemented WebSocket-based real-time communication for multiplayer features",
-            "Built and maintained MySQL database schemas for user and game data",
-            "Deployed services using Docker and managed Redis for caching and session management",
-            "Integrated analytics system and game rating system on the platform"
+            "I helped shape ayomain.games into what it is today.",
         ],
         challenges: [
-            { problem: "Creating a flexible card effect system that supports complex interactions without hardcoding.", solution: "Designed a data-driven card scripting system using ScriptableObjects with a custom visual scripting tool, allowing game designers to compose card effects from reusable building blocks. This reduced new card creation time from days to hours." },
         ],
         tech: ["HTML", "JavaScript", "CSS", "Node.js", "MySQL", "Websocket", "Redis", "Docker"],
         image: "/images/Feature Graphic/FG AyoMain.png",
@@ -141,9 +131,7 @@ export const projects: Project[] = [
         jobDesc: [
             "Led a team of developers and artists during GameJam+ 2024",
             "Designed and implemented core 2.5D gameplay mechanics in Unity",
-            "Coordinated task distribution and maintained team communication",
-            "Developed bug-guiding AI pathfinding system",
-            "Managed project scope to fit within the GameJam time constraints",
+            "Developed core systems such as day-night cycle, bug movement, and objective system",
             "Delivered a playable build and pitch deck within the deadline"
         ],
         challenges: [
@@ -170,11 +158,6 @@ export const projects: Project[] = [
         role: "Game Programmer",
         jobDesc: [
             "Developed 6 classic board games (Snake&Ladder, Ludo, Dam Daman, Halma, Congklak, Marbles) in Construct 3",
-            "Built modular turn-based system to standardize player flow across all games",
-            "Implemented AI opponents with varying difficulty levels for single-player mode",
-            "Designed and coded custom pathfinding logic for different board mechanics",
-            "Handled full development independently as the sole programmer",
-            "Ensured local multiplayer support for 1-4 players across all games"
         ],
         challenges: [
             { problem: "Each board game had unique gameplay mechanics and AI behavior.", solution: "Built a modular turn-based system using a queue to standardize player flow across games. Implemented custom pathfinding logic for various board mechanics and handled full development independently as a sole programmer." },
@@ -203,11 +186,7 @@ export const projects: Project[] = [
             "Player will play as a kids that willing to help their parents by doing household chore. Nagih home battle serve more than 20 games that you can play together.",
         role: "Game Programmer",
         jobDesc: [
-            "Developed over 20 household chore-themed minigames using Construct 3",
-            "Implemented local multiplayer support for up to 4 players",
-            "Created varied game mechanics for each minigame (tapping, swiping, timing-based)",
-            "Integrated scoring and progression systems across all minigames",
-            "Published the game on AyoMain! gaming platform"
+            "Developed 6+ minigames in Construct 3",
         ],
         challenges: [
         ],
