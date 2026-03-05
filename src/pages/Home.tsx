@@ -33,9 +33,9 @@ const otherTech = [
 
 const stats = [
     { value: "2+", label: "Years Exp" },
-    { value: "10+", label: "Projects" },
-    { value: "3+", label: "Shipped Games" },
-    { value: "∞", label: "Coffee Cups" },
+    { value: "5+", label: "Projects" },
+    { value: "5+", label: "Shipped Games" },
+    { value: "50K+", label: "Downloads on Play Store" },
 ];
 
 export default function Home() {
@@ -125,8 +125,8 @@ export default function Home() {
                         </h1>
                         <p className="hero-desc">
                             Building{" "}
-                            <span className="highlight">scalable multiplayer systems</span>{" "}
-                            &amp; performant gameplay experiences. Passionate about real-time
+                            <span className="highlight">scalable systems</span>{" "}
+                            &amp; <span className="highlight">performant gameplay experiences</span>. Passionate about real-time
                             networking, game architecture, and pushing the boundaries of
                             interactive entertainment.
                         </p>
@@ -165,13 +165,6 @@ export default function Home() {
                             in <span className="accent-bold">real-time multiplayer systems</span>,
                             I build the invisible architecture that makes online games feel
                             seamless and responsive.
-                        </p>
-                        <p>
-                            With years of experience in <span className="bold">Unity</span> and{" "}
-                            <span className="bold">C#</span>, I've shipped games ranging from
-                            competitive multiplayer racers to cooperative dungeon crawlers. My
-                            approach combines clean architecture, performance optimization, and
-                            deep understanding of networking to deliver polished game experiences.
                         </p>
                         <p>
                             Beyond game development, I have strong full-stack skills in{" "}
