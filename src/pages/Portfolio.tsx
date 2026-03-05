@@ -3,7 +3,7 @@ import Section from "../components/Section";
 import PortfolioCard from "../components/PortfolioCard";
 import { projects } from "../data/portfolio";
 
-const categories = ["All", "Unity", "Construct", "Others"] as const;
+const categories = ["All", "Unity", "Construct", "Web"] as const;
 type Category = (typeof categories)[number];
 
 export default function Portfolio() {

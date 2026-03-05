@@ -60,21 +60,54 @@ export default function PortfolioDetail() {
                     <div>
                         <div className="detail-card" style={{ marginBottom: "2rem" }}>
                             <h2 className="detail-card-title">
-                                <span className="accent">//</span> Description
+                                <span className="accent">//</span> Overview
                             </h2>
                             <p>{project.fullDescription}</p>
                         </div>
 
+                        {project.jobDesc && project.jobDesc.length > 0 && (
+                            <div className="detail-card" style={{ marginBottom: "2rem" }}>
+                                <h2 className="detail-card-title">
+                                    <span className="accent">//</span> Job Description
+                                </h2>
+                                <ul className="jobdesc-list">
+                                    {project.jobDesc.map((desc, i) => (
+                                        <li key={i} className="jobdesc-item">{desc}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
                         <div className="detail-card detail-card-accent">
                             <h2 className="detail-card-title">
-                                <span className="accent">//</span> Problem &amp; Solution
+                                <span className="accent">//</span> Challenge
                             </h2>
-                            <p>{project.problemSolution}</p>
+                            <div className="challenge-list">
+                                {project.challenges.map((c, i) => (
+                                    <div key={i} className="challenge-item">
+                                        <div className="challenge-problem">
+                                            <span className="challenge-label">Problem:</span>
+                                            <p>{c.problem}</p>
+                                        </div>
+                                        <div className="challenge-solution">
+                                            <span className="challenge-label">Solution:</span>
+                                            <p>{c.solution}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
                     {/* Sidebar */}
                     <div className="detail-sidebar">
+                        <div className="detail-card">
+                            <h3 className="detail-sidebar-title">Association</h3>
+                            <p className="detail-sidebar-text">
+                                {project.association}
+                            </p>
+                        </div>
+
                         <div className="detail-card">
                             <h3 className="detail-sidebar-title">Role</h3>
                             <p className="detail-sidebar-text">
@@ -90,7 +123,7 @@ export default function PortfolioDetail() {
                         </div>
 
                         <div className="detail-card">
-                            <h3 className="detail-sidebar-title">Tech Stack</h3>
+                            <h3 className="detail-sidebar-title">Skills</h3>
                             <div className="detail-tags">
                                 {project.tech.map((t) => (
                                     <span key={t} className="tech-tag">{t}</span>

@@ -1,0 +1,9 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: joshuapunyanan-web
+    ports:
+      - "3001:3000"
+    restart: unless-stopped

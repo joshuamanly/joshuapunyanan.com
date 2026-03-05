@@ -23,8 +23,8 @@ const otherTech = [
     { name: "Go", icon: "/images/tech/go.png" },
     { name: "Gin", icon: "/images/tech/gin.png" },
     { name: "MySQL", icon: "/images/tech/mysql.png" },
-    { name: "PostgreSQL", icon: "/images/tech/postgresql.png" },
-    { name: "MongoDB", icon: "/images/tech/mongodb.png" },
+    // { name: "PostgreSQL", icon: "/images/tech/postgresql.png" },
+    // { name: "MongoDB", icon: "/images/tech/mongodb.png" },
     { name: "Redis", icon: "/images/tech/redis.png" },
     { name: "Docker", icon: "/images/tech/docker.png" },
     { name: "Postman", icon: "/images/tech/postman.png" },
@@ -32,7 +32,7 @@ const otherTech = [
 ];
 
 const stats = [
-    { value: "5+", label: "Years Exp" },
+    { value: "2+", label: "Years Exp" },
     { value: "10+", label: "Projects" },
     { value: "3+", label: "Shipped Games" },
     { value: "∞", label: "Coffee Cups" },

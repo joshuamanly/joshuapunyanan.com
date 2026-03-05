@@ -47,8 +47,8 @@ export default function Footer() {
                 </div>
 
                 <div className="footer-bottom">
-                    <p className="footer-copyright">
-                        © {new Date().getFullYear()} Joshua Manly Punyanan. All rights reserved. All wrongs reversed.
+                    <p className="footer-copyright" style={{ fontWeight: 700 }}>
+                        <span style={{ color: "#000" }}>© {new Date().getFullYear()} Joshua Manly Punyanan.</span> <span style={{ color: "var(--accent)" }}>All rights reserved.</span> <span style={{ color: "#ff4444" }}>All wrongs reversed.</span>
                     </p>
                 </div>
             </div>

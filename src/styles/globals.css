@@ -681,6 +681,10 @@ a:hover {
   transition: all 0.15s;
   flex: 1 1 120px;
   max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 640px) {
@@ -1171,6 +1175,75 @@ a:hover {
 
 .detail-card-accent {
   border-color: var(--accent);
+}
+
+/* Challenge nested cards */
+.challenge-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.challenge-item {
+  background: var(--bg);
+  border: 2px solid var(--border-muted);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.challenge-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.challenge-problem .challenge-label {
+  color: #ff6b6b;
+}
+
+.challenge-solution .challenge-label {
+  color: var(--accent);
+}
+
+.challenge-problem p,
+.challenge-solution p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+/* Job Description list */
+.jobdesc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.jobdesc-item {
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.jobdesc-item::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
 }
 
 .detail-card-title {

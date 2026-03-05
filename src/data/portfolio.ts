@@ -6,12 +6,14 @@ export interface GalleryItem {
 export interface Project {
     id: string;
     title: string;
-    category: "Unity" | "Construct" | "Others";
+    category: "Unity" | "Construct" | "Web";
+    association: string;
     date: string;
     description: string;
     fullDescription: string;
+    jobDesc: string[];
     role: string;
-    problemSolution: string;
+    challenges: { problem: string; solution: string }[];
     tech: string[];
     image: string;
     video: string;
@@ -39,15 +41,26 @@ export const projects: Project[] = [
     {
         id: "power-kart-racing",
         title: "Power Kart Racing",
+        association: "Polytron",
         category: "Unity",
-        date: "Jun 2024 – Feb 2025",
+        date: "Feb 2024 – Sept 2024",
         description: "Feel the excitement of racing in Power Kart Racing with your friends on Ayo Main!",
         fullDescription:
-            "3D kart racing game with local multiplayer for 1-4 players. Featuring 5 unique upgradeable powerups like rocket launcher, boost, smoke, shield, and EMP. The game is exclusive on Polytron Android TV..",
+            "3D kart racing game with local multiplayer for 1-4 players. Featuring 5 unique upgradeable powerups like rocket launcher, boost, smoke, shield, and EMP. The game is exclusive on Polytron Android TV.",
         role: "Game Programmer",
-        problemSolution:
-            "Challenge: Synchronizing physics-based racing across 8 players with minimal latency. Solution: Implemented client-side prediction with server reconciliation using Photon's authoritative server model. Used interpolation and extrapolation to smooth out network jitter, achieving consistent 60fps gameplay even on unstable connections.",
-        tech: ["Unity", "C#", "Websocket", "JSON"],
+        jobDesc: [
+            "Programmed all main menu system, including UI and custom animations.",
+            "Programmed all multiplayer logic in main menu and game for handling player connection, disconnection, and reconnection.",
+            "Programmed spline calculation system used for race management, player tracking and AI movement.",
+            "Programmed some of the parts/powerups including smoke and shield. Created custom shader using HLSL for shield animation.",
+            "Programmed minimap system using camera and render texture.",
+            "Programmed whole controller using Construct 3, implemented complex features like accelerometer and gyroscope.",
+            "Optimized game performance for low end TV devices by extensively monitoring memory usage in profiler. ",
+        ],
+        challenges: [
+            { problem: "Synchronizing physics-based racing across 8 players with minimal latency.", solution: "Implemented client-side prediction with server reconciliation using Photon's authoritative server model. Used interpolation and extrapolation to smooth out network jitter, achieving consistent 60fps gameplay even on unstable connections." },
+        ],
+        tech: ["Unity", "C#", "Optimization"],
         image: "/images/Feature Graphic/FG Power Kart Racing.png",
         video: "/videos/Power Kart Racing Game Trailer.webm",
         gallery: [
@@ -57,96 +70,24 @@ export const projects: Project[] = [
         demoLink: "https://play.google.com/store/apps/details?id=com.hit.powerkartracing&hl=en_US",
     },
     {
-        id: "anthias-ark",
-        title: "Anthia's Ark",
-        category: "Unity",
-        date: "Oct 2024",
-        description: "A relaxing adventure game in a 2.5D world with beautiful scenery",
-        fullDescription:
-            "Anthia's Ark is a relaxing adventure game in a 2.5D world with beautiful scenery where the player will be saving bugs by guiding them to their base. This game is a submission to GameJam+ 2024.",
-        role: "Team Lead & Game Programmer",
-        problemSolution:
-            "Challenge: Procedural dungeon generation that feels hand-crafted while maintaining network sync. Solution: Developed a seed-based Wave Function Collapse algorithm that generates identical dungeons on all clients using shared seeds, eliminating the need to sync map data over the network.",
-        tech: ["Unity", "C#"],
-        image: "/images/Feature Graphic/FG Anthias Ark.png",
-        video: "/videos/Power Kart Racing Game Trailer.webm",
-        gallery: [
-            { src: "/images/Gallery/Anthias Ark-1.png", caption: "2.5D world exploration" },
-            { src: "/images/Gallery/Anthias Ark-2.png", caption: "Guiding bugs to their base" },
-        ],
-        demoLink: "https://namecdream.itch.io/anthias-ark",
-    },
-    {
-        id: "ayomain",
-        title: "AyoMain! Gaming Platform",
-        category: "Others",
-        date: "Feb 2025 – Present",
-        description: "Turn-based card battler with deck building and online matchmaking system.",
-        fullDescription:
-            "Card Battle Arena is a strategic turn-based card game featuring 200+ unique cards, deck building mechanics, and competitive online matchmaking. The game implements a custom card scripting system that allows designers to create new card effects without code changes, and uses an ELO-based ranking system for fair matchmaking.",
-        role: "Full Stack Developer",
-        problemSolution:
-            "Challenge: Creating a flexible card effect system that supports complex interactions without hardcoding. Solution: Designed a data-driven card scripting system using ScriptableObjects with a custom visual scripting tool, allowing game designers to compose card effects from reusable building blocks. This reduced new card creation time from days to hours.",
-        tech: ["HTML", "JavaScript", "CSS", "Node.js", "MySQL", "Websocket", "Redis", "Docker"],
-        image: "/images/Feature Graphic/FG AyoMain.png",
-        video: "/videos/Power Kart Racing Game Trailer.webm",
-        gallery: [
-            { src: "/images/Gallery/AyoMain-1.png", caption: "Platform homepage" },
-            { src: "/images/Gallery/AyoMain-2.png", caption: "Game store listing" },
-        ],
-        demoLink: "https://ayomain.games",
-    },
-    {
-        id: "mainan-kita",
-        title: "Mainan Kita",
-        category: "Construct",
-        date: "Apr 2024 – Oct 2024",
-        description: "A collection of 6 classic board games.",
-        fullDescription:
-            "Mainan Kita is a local multiplayer game that supports 1-4 players. Mainan Kita offers 6 classic board games including Snake&Ladder, Ludo, Dam Daman, Halma, Congklak and Marbles. Available on AyoMain!.",
-        role: "Game Programmer",
-        problemSolution:
-            "Challenge: Managing hundreds of enemies per wave without frame drops. Solution: Implemented object pooling, spatial partitioning with quadtrees for collision detection, and DOTS-inspired job system for parallel pathfinding calculations, maintaining stable 60fps even with 500+ entities on screen.",
-        tech: ["Construct 3", "JavaScript"],
-        image: "/images/Feature Graphic/FG Mainan Kita.png",
-        video: "/videos/Power Kart Racing Game Trailer.webm",
-        gallery: [
-            { src: "/images/Gallery/Mainan Kita-1.png", caption: "Classic board game selection menu" },
-            { src: "/images/Gallery/Mainan Kita-2.png", caption: "Multiplayer board game in progress" },
-        ],
-        demoLink: "https://ayomain.games",
-    },
-    {
-        id: "nagih-home-battle",
-        title: "Nagih Home Battle",
-        category: "Construct",
-        date: "Oct 2024 – Dec 2024",
-        description: "Player will play as a kids that willing to help their parents by doing household chore.",
-        fullDescription:
-            "Player will play as a kids that willing to help their parents by doing household chore. Nagih home battle serve more than 20 games that you can play together.",
-        role: "Game Programmer",
-        problemSolution:
-            "Challenge: Scaling real-time quiz sessions to handle 100+ concurrent users with sub-second response times. Solution: Implemented a horizontally scalable WebSocket architecture using Socket.IO with Redis adapter for cross-server pub/sub, achieving 99.9% uptime and <200ms average response time.",
-        tech: ["Construct 3", "JavaScript"],
-        image: "/images/Feature Graphic/FG Nagih Home Battle.png",
-        video: "/videos/Power Kart Racing Game Trailer.webm",
-        gallery: [
-            { src: "/images/Gallery/Nagih Home Battle-1.png", caption: "Mini-game gameplay" },
-            { src: "/images/Gallery/Nagih Home Battle-2.png", caption: "Household chore challenge" },
-        ],
-        demoLink: "https://ayomain.games",
-    },
-    {
         id: "meow-fishery",
         title: "Meow Fishery",
+        association: "Polytron",
         category: "Construct",
-        date: "Dec 2024 – Jan 2025",
+        date: "Jul 2025 – Nov 2025",
         description: "Join the fisher cats on fun and cooperative fishing adventure in Meow Fishery!",
         fullDescription:
             "Join the fisher cats on fun and cooperative fishing adventure in Meow Fishery! Team up with your friends and sail the open ocean to catch as many fish as you can!",
         role: "Game Programmer",
-        problemSolution:
-            "Challenge: Accurate AR object placement in outdoor environments with GPS drift. Solution: Combined GPS positioning with visual-inertial odometry and cloud anchor persistence to achieve <1m placement accuracy. Implemented a hybrid tracking system that falls back gracefully between AR and GPS-only modes.",
+        jobDesc: [
+            "Developed cooperative fishing gameplay mechanics using Construct 3",
+            "Implemented multiplayer synchronization for cooperative play sessions",
+            "Created various fish AI behaviors and spawning systems",
+            "Built UI systems for player inventory and progression",
+            "Integrated game with AyoMain! gaming platform"
+        ],
+        challenges: [
+        ],
         tech: ["Construct 3", "JavaScript"],
         image: "/images/Feature Graphic/FG Meow Fishery.png",
         video: "/videos/Power Kart Racing Game Trailer.webm",
@@ -158,22 +99,162 @@ export const projects: Project[] = [
 
     },
     {
+        id: "ayomain",
+        title: "AyoMain! Gaming Platform",
+        association: "Polytron",
+        category: "Web",
+        date: "Feb 2025 – Present",
+        description: "Turn-based card battler with deck building and online matchmaking system.",
+        fullDescription:
+            "Card Battle Arena is a strategic turn-based card game featuring 200+ unique cards, deck building mechanics, and competitive online matchmaking. The game implements a custom card scripting system that allows designers to create new card effects without code changes, and uses an ELO-based ranking system for fair matchmaking.",
+        role: "Full Stack Developer",
+        jobDesc: [
+            "Revamped the AyoMain! platform UI based on design mockups",
+            "Developed RESTful APIs using Node.js for game management and analytics",
+            "Implemented WebSocket-based real-time communication for multiplayer features",
+            "Built and maintained MySQL database schemas for user and game data",
+            "Deployed services using Docker and managed Redis for caching and session management",
+            "Integrated analytics system and game rating system on the platform"
+        ],
+        challenges: [
+            { problem: "Creating a flexible card effect system that supports complex interactions without hardcoding.", solution: "Designed a data-driven card scripting system using ScriptableObjects with a custom visual scripting tool, allowing game designers to compose card effects from reusable building blocks. This reduced new card creation time from days to hours." },
+        ],
+        tech: ["HTML", "JavaScript", "CSS", "Node.js", "MySQL", "Websocket", "Redis", "Docker"],
+        image: "/images/Feature Graphic/FG AyoMain.png",
+        video: "/videos/Power Kart Racing Game Trailer.webm",
+        gallery: [
+            { src: "/images/Gallery/AyoMain-1.png", caption: "Platform homepage" },
+            { src: "/images/Gallery/AyoMain-2.png", caption: "Game store listing" },
+        ],
+        demoLink: "https://ayomain.games",
+    },
+    {
+        id: "anthias-ark",
+        title: "Anthia's Ark",
+        association: "GameJam+ 2024",
+        category: "Unity",
+        date: "Nov 2024",
+        description: "A relaxing adventure game in a 2.5D world with beautiful scenery",
+        fullDescription:
+            "Anthia's Ark is a relaxing adventure game in a 2.5D world with beautiful scenery where the player will be saving bugs by guiding them to their base. This game is a submission to GameJam+ 2024.",
+        role: "Team Lead & Game Programmer",
+        jobDesc: [
+            "Led a team of developers and artists during GameJam+ 2024",
+            "Designed and implemented core 2.5D gameplay mechanics in Unity",
+            "Coordinated task distribution and maintained team communication",
+            "Developed bug-guiding AI pathfinding system",
+            "Managed project scope to fit within the GameJam time constraints",
+            "Delivered a playable build and pitch deck within the deadline"
+        ],
+        challenges: [
+            { problem: "Team coordination and communication.", solution: "I coordinated the team by dividing tasks and maintaining communication throughout the GameJam. We adjusted the scope when necessary to fit the limited timeframe. I handled the core gameplay programming in Unity and helped resolve technical issues. In the end, we managed to submit a pitch deck and a playable build." },
+        ],
+        tech: ["Unity", "C#"],
+        image: "/images/Feature Graphic/FG Anthias Ark.png",
+        video: "/videos/Power Kart Racing Game Trailer.webm",
+        gallery: [
+            { src: "/images/Gallery/Anthias Ark-1.jpg", caption: "2.5D world exploration" },
+            { src: "/images/Gallery/Anthias Ark-2.jpg", caption: "Guiding bugs to their base" },
+        ],
+        demoLink: "https://namecdream.itch.io/anthias-ark",
+    },
+    {
+        id: "mainan-kita",
+        title: "Mainan Kita",
+        association: "Polytron",
+        category: "Construct",
+        date: "Sept 2024 – Dec 2024",
+        description: "A collection of 6 classic board games.",
+        fullDescription:
+            "Mainan Kita is a local multiplayer game that supports 1-4 players. Mainan Kita offers 6 classic board games including Snake&Ladder, Ludo, Dam Daman, Halma, Congklak and Marbles. Available on AyoMain!.",
+        role: "Game Programmer",
+        jobDesc: [
+            "Developed 6 classic board games (Snake&Ladder, Ludo, Dam Daman, Halma, Congklak, Marbles) in Construct 3",
+            "Built modular turn-based system to standardize player flow across all games",
+            "Implemented AI opponents with varying difficulty levels for single-player mode",
+            "Designed and coded custom pathfinding logic for different board mechanics",
+            "Handled full development independently as the sole programmer",
+            "Ensured local multiplayer support for 1-4 players across all games"
+        ],
+        challenges: [
+            { problem: "Each board game had unique gameplay mechanics and AI behavior.", solution: "Built a modular turn-based system using a queue to standardize player flow across games. Implemented custom pathfinding logic for various board mechanics and handled full development independently as a sole programmer." },
+        ],
+        tech: ["Construct 3", "JavaScript"],
+        image: "/images/Feature Graphic/FG Mainan Kita.png",
+        video: "/videos/Power Kart Racing Game Trailer.webm",
+        gallery: [
+            { src: "/images/Gallery/Mainan Kita-1.png", caption: "Snake & Ladder. [Credit: @AyoMain!]" },
+            { src: "/images/Gallery/Mainan Kita-2.png", caption: "Marbles. [Credit: @AyoMain!]" },
+            { src: "/images/Gallery/Mainan Kita-3.png", caption: "Ludo. [Credit: @AyoMain!]" },
+            { src: "/images/Gallery/Mainan Kita-4.png", caption: "Halma. [Credit: @AyoMain!]" },
+            { src: "/images/Gallery/Mainan Kita-5.png", caption: "Dam Daman. [Credit: @AyoMain!]" },
+            { src: "/images/Gallery/Mainan Kita-6.png", caption: "Congklak. [Credit: @AyoMain!]" },
+        ],
+        demoLink: "https://ayomain.games",
+    },
+    {
+        id: "nagih-home-battle",
+        title: "Nagih Home Battle",
+        category: "Construct",
+        association: "Polytron",
+        date: "Feb 2025 – May 2025",
+        description: "Player will play as a kids that willing to help their parents by doing household chore.",
+        fullDescription:
+            "Player will play as a kids that willing to help their parents by doing household chore. Nagih home battle serve more than 20 games that you can play together.",
+        role: "Game Programmer",
+        jobDesc: [
+            "Developed over 20 household chore-themed minigames using Construct 3",
+            "Implemented local multiplayer support for up to 4 players",
+            "Created varied game mechanics for each minigame (tapping, swiping, timing-based)",
+            "Integrated scoring and progression systems across all minigames",
+            "Published the game on AyoMain! gaming platform"
+        ],
+        challenges: [
+        ],
+        tech: ["Construct 3", "JavaScript"],
+        image: "/images/Feature Graphic/FG Nagih Home Battle.png",
+        video: "/videos/Power Kart Racing Game Trailer.webm",
+        gallery: [
+            { src: "/images/Gallery/Nagih Home Battle-1.png", caption: "Minigames. [Credit: @AyoMain!]" },
+        ],
+        demoLink: "https://ayomain.games",
+    },
+    {
         id: "susun-kebaikan",
         title: "Susun Kebaikan",
         category: "Construct",
-        date: "Feb 2025 – Mar 2025",
+        association: "Polytron",
+        date: "Jan 2026 – Feb 2026",
         description: "A mobile puzzle game for Eid charity campaign.",
         fullDescription:
             "Collaboration with Electric Vehicle (EV) department to develop a mobile puzzle game for Eid charity campaign, supporting 'Kilometer Kebaikan' program.",
         role: "Full Stack Developer",
-        problemSolution:
-            "Challenge: Creating a flexible card effect system that supports complex interactions without hardcoding. Solution: Designed a data-driven card scripting system using ScriptableObjects with a custom visual scripting tool, allowing game designers to compose card effects from reusable building blocks. This reduced new card creation time from days to hours.",
-        tech: ["Construct 3", "React.js", "Golang", "MySQL", "Redis", "Docker"],
+        jobDesc: [
+            "Developed mobile puzzle game for Eid charity campaign using Construct 3",
+            "Built RESTful backend APIs using Golang with the Gin framework",
+            "Implemented JWT-based authentication for CMS panel access control",
+            "Developed CMS panel using React.js for campaign management",
+            "Managed MySQL database and Redis caching for data persistence",
+            "Resolved browser compatibility and caching issues across multiple devices",
+            "Deployed application using Docker containers"
+        ],
+        challenges: [
+            {
+                problem: "My first time using Golang as backend. Under strict deadline, I needed to learn Go from scratch.",
+                solution: "I started by learning the Go fundamentals and built RESTful APIs using the Gin framework. I implemented JWT-based authentication specifically for the CMS panel to secure access control. I also used Postman extensively to test, validate, and debug API endpoints."
+            },
+            {
+                problem: "Browser incompability and caching issue",
+                solution: "I implemented cache-control headers and versioning strategies for static assets to prevent stale files. Additionally, to resolve client-side inconsistencies, I cleared service worker cache logic and ensured proper build versioning to force updates when deploying new releases."
+            }
+        ],
+        tech: ["Construct 3", "React.js", "Golang", "MySQL", "Redis", "Postman", "Docker"],
         image: "/images/Feature Graphic/FG Susun Kebaikan.png",
         video: "/videos/Power Kart Racing Game Trailer.webm",
         gallery: [
-            { src: "/images/Gallery/Susun Kebaikan-1.png", caption: "Puzzle gameplay" },
-            { src: "/images/Gallery/Susun Kebaikan-2.png", caption: "Eid charity campaign integration" },
+            { src: "/images/Gallery/Susun Kebaikan-1.jpg", caption: "Supporting Eid charity campaign. [Credit: @polytron.ev]" },
+            { src: "/images/Gallery/Susun Kebaikan-2.jpg", caption: "Puzzle game tutorial. [Credit: @polytron.ev]" },
+            { src: "/images/Gallery/Susun Kebaikan-3.jpg", caption: "Reward. [Credit: @polytron.ev]" },
         ],
         demoLink: "https://kepingkebaikan.games.nagihgames.com/play",
     },
