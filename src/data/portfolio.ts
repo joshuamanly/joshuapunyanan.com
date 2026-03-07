@@ -100,12 +100,13 @@ export const projects: Project[] = [
         association: "Polytron",
         category: "Web",
         date: "Feb 2025 – Present",
-        description: "Turn-based card battler with deck building and online matchmaking system.",
+        description: "Ayomain Games is a web-based gaming platform that provides a variety of accessible and lightweight games playable instantly across devices.",
         fullDescription:
-            "Card Battle Arena is a strategic turn-based card game featuring 200+ unique cards, deck building mechanics, and competitive online matchmaking. The game implements a custom card scripting system that allows designers to create new card effects without code changes, and uses an ELO-based ranking system for fair matchmaking.",
+            "Ayomain Games is an online gaming platform that provides a collection of browser-based games designed to be easy to access and enjoyable for a wide range of players. Players can conveniently play the games directly from their smartphones, allowing them to enjoy the experience anytime and anywhere.",
         role: "Full Stack Developer",
         jobDesc: [
-            "I helped shape ayomain.games into what it is today.",
+            "Revamped the platform UI based on mockup.",
+            "Implemented new features such as analytics system, gamepad integration support, store listing, and more.",
         ],
         challenges: [
         ],
@@ -113,8 +114,6 @@ export const projects: Project[] = [
         image: "/images/Feature Graphic/FG AyoMain.png",
         video: "/videos/Power Kart Racing Game Trailer.webm",
         gallery: [
-            { src: "/images/Gallery/AyoMain-1.png", caption: "Platform homepage" },
-            { src: "/images/Gallery/AyoMain-2.png", caption: "Game store listing" },
         ],
         demoLink: "https://ayomain.games",
     },
@@ -257,7 +256,7 @@ export const experienceData: Experience[] = [
         role: "Game Developer",
         duration: "Feb 2025 – Present",
         responsibilities: [
-            "Primarily working on AyoMain! gaming platform (https://ayomain.games), revamped the platform UI based on mockup and implemented new features such as analytics system, game rating system, gamepad integration support, store listing, and more.",
+            "I helped shape AyoMain! [https://ayomain.games] gaming platform into what it is today.",
         ],
         tech: ["Unity", "C#", "JavaScript", "Node.js", "Golang", "React.js", "MySQL", "Construct 3", "WebSocket", "Redis", "Postman", "Docker", "Git"],
     },
