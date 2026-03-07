@@ -160,11 +160,11 @@ export default function Home() {
                 <div className="about-grid">
                     <div className="about-text">
                         <p>
-                            I'm a <span className="bold">Game Programmer</span> with a deep
-                            passion for creating immersive interactive experiences. Specializing
-                            in <span className="accent-bold">real-time multiplayer systems</span>,
-                            I build the invisible architecture that makes online games feel
-                            seamless and responsive.
+                            I'm a <span className="bold">Game Programmer</span> with a deep passion for creating interactive experiences. I recently graduated from <span className="bold">BINUS University</span>, majoring in <span className="accent-bold">Computer Science</span> with a focus on <span className="accent-bold">Game Application and Technology</span>.
+                        </p>
+
+                        <p>
+                            I'm proficient in <span className="accent-bold">Unity</span> and <span className="accent-bold">C#</span>, with experience developing both single-player and multiplayer games. I enjoy building scalable gameplay systems, implementing game mechanics, and optimizing performance to deliver smooth and engaging player experiences.
                         </p>
                         <p>
                             Beyond game development, I have strong full-stack skills in{" "}
