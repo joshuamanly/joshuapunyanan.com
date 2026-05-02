@@ -13,8 +13,7 @@ export default function Footer() {
                             <span className="accent">/&gt;</span>
                         </Link>
                         <p className="footer-brand-desc">
-                            Game Programmer specializing in multiplayer systems, real-time
-                            networking, and performant gameplay.
+                            Game Programmer specializing in multiplayer systems, clean architecture, and performant gameplay.
                         </p>
                     </div>
 
@@ -48,7 +47,7 @@ export default function Footer() {
 
                 <div className="footer-bottom">
                     <p className="footer-copyright" style={{ fontWeight: 700 }}>
-                        <span style={{ color: "#000" }}>© {new Date().getFullYear()} Joshua Manly Punyanan.</span> <span style={{ color: "var(--accent)" }}>All rights reserved.</span> <span style={{ color: "#ff4444" }}>All wrongs reversed.</span>
+                        <span style={{ color: "#000" }}>© {new Date().getFullYear()} Joshua Manly Punyanan.</span> <span style={{ color: "var(--accent)" }}>All rights reserved.</span> <span style={{ color: "#ff4444" }}>All wrongs reserved.</span>
                     </p>
                 </div>
             </div>

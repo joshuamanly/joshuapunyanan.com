@@ -43,7 +43,7 @@ export const projects: Project[] = [
         title: "Power Kart Racing",
         association: "Polytron",
         category: "Unity",
-        date: "Feb 2024 – Sept 2024",
+        date: "Feb 2024 – Now",
         description: "Feel the excitement of racing in Power Kart Racing with your friends on Ayo Main!",
         fullDescription:
             "3D kart racing game with local multiplayer for 1-4 players. Featuring 5 unique upgradeable powerups like rocket launcher, boost, smoke, shield, and EMP. The game is exclusive on Polytron Android TV.",
@@ -256,7 +256,7 @@ export const experienceData: Experience[] = [
         role: "Game Developer",
         duration: "Feb 2025 – Present",
         responsibilities: [
-            "I helped shape AyoMain! [https://ayomain.games] gaming platform into what it is today.",
+            "Contribute heavily to the development of AyoMain! (ayomain.games) by implementing new features and fixing bugs to improve performance and stability. Also further developing our 3D Kart racing game by adding a User Generated Content (UGC) system, enabling players to create, publish, and share custom maps. Additionally, developed several games using Construct 3 that were published on the AyoMain! platform, while providing guidance and support to junior developers.",
         ],
         tech: ["Unity", "C#", "JavaScript", "Node.js", "Golang", "React.js", "MySQL", "Construct 3", "WebSocket", "Redis", "Postman", "Docker", "Git"],
     },
