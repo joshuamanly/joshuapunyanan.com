@@ -70,6 +70,28 @@ export const projects: Project[] = [
         demoLink: "https://play.google.com/store/apps/details?id=com.hit.powerkartracing&hl=en_US",
     },
     {
+        id: "arufa",
+        title: "Arufa: The Blade of Fate",
+        association: "Lato Games",
+        category: "Unity",
+        date: "Aug 2026 – Oct 2026",
+        description: "An anime-inspired 3D hack-and-slash game where you chain attacks, dodge enemy strikes, unleash powerful abilities, and challenge yourself to defeat a dangerous boss.",
+        fullDescription:
+            "An anime-inspired 3D hack-and-slash game where you chain attacks, dodge enemy strikes, unleash powerful abilities, and challenge yourself to defeat a dangerous boss.",
+        role: "Game Programmer",
+        jobDesc: [
+            "Developed a roguelike mode for solo and co-op (Split screen) with features like progression systems, power ups, procedural wave generation and skills cutscene while ensuring responsive 3C (Character, Control, Camera)",
+        ],
+        challenges: [
+        ],
+        tech: ["Unity", "C#"],
+        image: "/images/Feature Graphic/FG Arufa.png",
+        video: "",
+        gallery: [
+        ],
+        demoLink: "https://store.steampowered.com/app/5278520/ARUFA__The_Blade_of_Fate",
+    },
+    {
         id: "meow-fishery",
         title: "Meow Fishery",
         association: "Polytron",
